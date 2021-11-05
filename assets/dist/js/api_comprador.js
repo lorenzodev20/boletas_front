@@ -100,7 +100,7 @@ $(document).ready(function () {
             }),
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
-                swal("Buen Trabajo!", data.responseText, "success")
+                swal("Buen Trabajo!", data, "success")
                     .then((value) => {
                         location.reload();
                     });
