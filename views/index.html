@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Reservas de Boletas</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sticky-footer-navbar/">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+    .bold-option{font-weight: bolder;}
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="../assets/dist/css/sticky-footer-navbar.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Reservas de Boletas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="boletas.html">Gestión de Boletas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="compradores.html">Gestión de Compradores</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5">Boletas asignadas</h1>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNuevaBoleta" id="nuevaReserva">
+      <!-- <button type="button" class="btn btn-primary" id="nuevaReserva"> -->
+        Asignar Boleta
+      </button>
+      <table class="table table-striped" id="reservas">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Boleta (Evento)</th>
+            <th scope="col">Nombres y Apellidos</th>
+            <th scope="col">Nro Boletas</th>
+            <th scope="col">Fecha Asignada</th>
+            <!-- <th scope="col">Acciones</th> -->
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">By Lorenzo Rojo</span>
+    </div>
+  </footer>
+
+  <!-- Modal Registrar-->
+  <div class="modal fade" id="modalNuevaBoleta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Asignacion de Boletas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form name="FormNuevaReserva" id="FormNuevaReserva">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="comprador_id" class="form-label">Selecione Comprador</label>
+              <select name="comprador_id" id="comprador_id" class="form-control">
+                <option value="">Seleccione un comprador</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="boleta_id" class="form-label">Selecione un boleta</label>
+              <select name="boleta_id" id="boleta_id" class="form-control">
+                <option value="">Seleccione una boleta</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad de Boletas</label>
+              <input type="number" class="form-control" name="cantidad" id="cantidad">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar Ventana</button>
+            <input type="submit" class="btn btn-primary" value="Asignar Boleta(s)">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/dist/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/dist/js/sweetalert.min.js"></script>
+  <script src="../assets/dist/js/moment.min.js"></script>
+  <script src="../assets/dist/js/api_reserva.js"></script>
+</body>
+
+</html>
